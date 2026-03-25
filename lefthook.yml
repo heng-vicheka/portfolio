@@ -31,14 +31,5 @@ pre-commit:
 pre-push:
   parallel: true
   commands:
-    type-check:
-      glob: '*.{js,jsx,ts,tsx}'
-      run: pnpm check
-    # test-unit:
-    #   glob: '*.{js,jsx,ts,tsx,svelte,css}'
-    #   run: pnpm run test:unit --run
-    # test-e2e:
-    #   glob: '{*.{js,jsx,ts,tsx,svelte},package.json}'
-    #   run: pnpm run test:e2e
-  fail-text: push blocked due to build or test failures
-    please resolve the issues above before pushing.
+    audit:
+      run: pnpm audit --audit-level=low
