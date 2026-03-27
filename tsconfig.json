@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "es2020",
+		"useDefineForClassFields": true,
+		"lib": ["es2020", "dom", "dom.iterable"],
+		"module": "es2020",
+		"skipLibCheck": true,
+		"outDir": "./dist",
+		"esModuleInterop": true,
+		"allowJs": true,
+		"checkJs": false,
+		"strict": true,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"moduleResolution": "bundler"
+	},
+	"include": ["."],
+	"exclude": ["node_modules", "dist", ".git", ".vscode"]
+}

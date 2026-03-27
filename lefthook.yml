@@ -1,0 +1,39 @@
+# lefthook.yml
+
+pre-commit:
+  parallel: true
+  commands:
+    # prevent-main-commit:
+    #   skip: git diff --cached --quiet
+    #   run: pnpm prevent-main-commit
+
+    # prettier
+    format:
+      glob: '*.{js,jsx,ts,tsx,json,md,css,html,yml,yaml}'
+      run: pnpm exec prettier --write --ignore-unknown {staged_files} && git add {staged_files}
+
+    lint:prettier:
+      glob: '*.{js,jsx,ts,tsx}'
+      run: pnpm exec eslint --quiet --cache --cache-strategy content --fix {staged_files} && git add {staged_files}
+
+    # esLint
+    lint:
+      glob: '*.{js,jsx,ts,tsx}'
+      run: pnpm exec eslint --quiet --cache --cache-strategy content {staged_files}
+
+    #CSpell
+    spell-check:
+      glob: '{src/**/*.{ts,js,css,html},*.config.{js,ts},README.md}'
+      run: pnpm exec cspell {staged_files}
+
+    audit:
+      run: pnpm audit --audit-level=low
+
+  fail-text: push blocked due to build or test failures
+    please resolve the issues above before pushing.
+
+pre-push:
+  parallel: true
+  commands:
+    audit:
+      run: pnpm audit --audit-level=low
