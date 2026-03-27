@@ -39,7 +39,7 @@ jobs:
         run: pnpm audit --audit-level low
 
       - name: Run spell check
-        run: pnpm exec cspell . --dot
+        run: pnpm lint:spell
 
       - name: Run prettier
         run: pnpm exec prettier --check .
