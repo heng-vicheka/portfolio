@@ -5,6 +5,7 @@
 		"lib": ["es2020", "dom", "dom.iterable"],
 		"module": "es2020",
 		"skipLibCheck": true,
+		"outDir": "./dist",
 		"esModuleInterop": true,
 		"allowJs": true,
 		"checkJs": false,
