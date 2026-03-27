@@ -10,7 +10,11 @@ pre-commit:
     # prettier
     format:
       glob: '*.{js,jsx,ts,tsx,json,md,css,html,yml,yaml}'
-      run: pnpm exec prettier --check --write --ignore-unknown {staged_files} && git add {staged_files}
+      run: pnpm exec prettier --write --ignore-unknown {staged_files} && git add {staged_files}
+
+    lint:prettier:
+      glob: '*.{js,jsx,ts,tsx}'
+      run: pnpm exec eslint --quiet --cache --cache-strategy content --fix {staged_files} && git add {staged_files}
 
     # esLint
     lint:
@@ -23,7 +27,7 @@ pre-commit:
       run: pnpm exec cspell {staged_files}
 
     audit:
-      run: pnpm audit --audit-level=high
+      run: pnpm audit --audit-level=low
 
   fail-text: push blocked due to build or test failures
     please resolve the issues above before pushing.
