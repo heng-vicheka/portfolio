@@ -3,10 +3,6 @@
 pre-commit:
   parallel: true
   commands:
-    # prevent-main-commit:
-    #   skip: git diff --cached --quiet
-    #   run: pnpm prevent-main-commit
-
     # prettier
     format:
       glob: '*.{js,jsx,ts,tsx,json,md,css,html,yml,yaml}'

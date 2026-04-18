@@ -4,6 +4,7 @@
 		"useDefineForClassFields": true,
 		"lib": ["es2020", "dom", "dom.iterable"],
 		"module": "es2020",
+		"jsx": "react-jsx",
 		"skipLibCheck": true,
 		"outDir": "./dist",
 		"esModuleInterop": true,
