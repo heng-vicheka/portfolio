@@ -25,13 +25,13 @@ export default defineConfig(
 				'error',
 				{
 					selector: 'variable',
-					format: ['snake_case', 'UPPER_CASE'],
+					format: ['snake_case', 'UPPER_CASE', 'PascalCase'],
 					leadingUnderscore: 'allow',
 					trailingUnderscore: 'allow',
 				},
 				{
 					selector: 'function',
-					format: ['snake_case'],
+					format: ['snake_case', 'PascalCase'],
 					leadingUnderscore: 'allow',
 					trailingUnderscore: 'allow',
 				},
