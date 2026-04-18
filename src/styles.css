@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Cinzel:wght@400;700&family=Noto+Serif+KH:wght@300;600&family=Noto+Serif+JP:wght@300;600&display=swap');
+@import 'tailwindcss';
 
 :root {
 	--red: #8b1a1a;

@@ -2,7 +2,7 @@ type EnglishScreenProps = {
 	is_active: boolean
 }
 
-export function EnglishScreen({ is_active }: EnglishScreenProps) {
+export function EnglishScreen({ is_active }: Readonly<EnglishScreenProps>) {
 	return (
 		<div id="en" className={`screen ${is_active ? 'active' : ''}`}>
 			<section className="en-hero">
